@@ -14,8 +14,12 @@
   setBodyFontSize();
 
   // set 1rem = viewWidth / 10
-  function setRemUnit () {
-    var rem = docEl.clientWidth / 10
+  function setRemUnit() {
+    var width = docEl.clientWidth > docEl.clientHeight ? docEl.clientHeight : docEl.clientWidth
+    if (width > 750) {
+      width = 750
+    }
+    var rem = width / 10
     docEl.style.fontSize = rem + 'px'
   }
 
